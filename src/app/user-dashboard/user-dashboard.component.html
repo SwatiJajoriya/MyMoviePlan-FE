@@ -1,0 +1,48 @@
+<app-user-navbar></app-user-navbar>
+
+<h1 style="color:red ; text-align: center" >Currently Running Shows</h1><br>
+  
+  <input type="text" name="search" [(ngModel)]="search">
+<button (click) = "getMovieByKeyword()" class = "btn btn-info">Search By Name</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<select  [(ngModel)]="genreKeyword"  name="genreKeyword">
+   <option  class="dropdown-item" *ngFor="let g of genrez" value="{{g.genre}}">{{g.genre}}</option>
+</select>
+   <button (click) = "goToMovieSearchByGenre()" class = "btn btn-info">Filter By Genre</button>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+
+   <select  [(ngModel)]="languagekeyword"  name="languagekeyword">
+    <option  class="dropdown-item" *ngFor="let l of languages" value="{{l.language}}">{{l.language}}</option>
+ </select>
+    <button (click) = "goToMovieSearchByLanguage()" class = "btn btn-info">Sort By Language</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<button (click) = "getMovies()" class = "btn btn-info">Back to Full List</button>
+
+
+
+   <br><br>
+
+
+
+<table class="table" border="1">
+
+<tr><th>Id</th><th>Image</th><th>Movie</th><th>Date</th><th>Time</th><th>Location</th><th>Genre</th><th>Language</th><th>Price</th><th>Action</th></tr>
+<tr *ngFor="let movie of movies">
+<td>{{movie.id}}</td>
+<td><img src="{{movie.imagePath}}" style="height: 100%; width: 100%;"></td>
+<td>{{movie.movieName}}</td>
+<td>{{movie.showDate}}</td>
+<td>{{movie.showTime}}</td>
+<td>{{movie.showingLocation}}</td>
+<td>{{movie.genre}}</td>
+<td>{{movie.language}}</td>
+<td>{{movie.price}}</td>
+<td><button (click) = "addMovieToCart()" class = "btn btn-info">Book Now</button></td></tr>
+</table>
+
+
+<h3  style="color:red ;">{{message}}</h3>

@@ -1,0 +1,29 @@
+<div class = "container-fluid">
+    <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="container" class="text-center">
+        <h2 class="text-primary">Update Movie Details : {{movie.id}}</h2>
+        <form (ngSubmit)="onSubmit()">
+                Movie name: <input type="text" name="name" [(ngModel)]="movie.movieName"><br>
+                Show Dates:<input type="text" name="showDate" [(ngModel)]="movie.showDate"><br>
+                Show Timings:<input type="text" name="showTime" [(ngModel)]="movie.showTime"><br>
+                Location:<input type="text"  name="showingLocation" [(ngModel)]="movie.showingLocation"><br>
+                Genre :
+                    <select class="btn btn-light" [(ngModel)]="movie.genre"  name="genre">
+                       <option  class="dropdown-item" *ngFor="let g of genrez" value="{{g.genre}}">{{g.genre}}</option>
+                    </select><br>
+               
+                Language :
+                    <select class="btn btn-light" [(ngModel)]="movie.language"  name="language">
+                       <option  class="dropdown-item" *ngFor="let lang of languages" value="{{lang.language}}">{{lang.language}}</option>
+                    </select><br>
+               
+               Image-Path:<input type="text" name="imagePath" [(ngModel)]="movie.imagePath"><br>
+               Price:<input type="text" name="price" [(ngModel)]="movie.price"><br>
+       
+                <button class="btn btn-success" type="submit">Submit</button>
+    
+
+        </form>
+    </div>  

@@ -1,0 +1,20 @@
+<div class = "container-fluid">
+    <app-admin-navbar></app-admin-navbar>
+</div>
+<form>
+    <table class="table table-hover" >
+        <tr >
+            <td>Language</td><td><input type="text" name="language" [(ngModel)]="lang.language"></td></tr>
+ <button type="submit" (click)="addLanguage()" class="btn btn-primary btn-lg">Add This Language For Movies</button>
+  
+</table>
+    </form>
+
+    <table class="table table-striped" >
+        <tr class="table-danger"><th>Language ID</th><th>Language</th></tr>
+        <tr class="table-info" *ngFor="let l of languages">
+            <td class="table-info">{{l.id}}</td>
+        <td>{{l.language}}</td>
+        </tr>
+        </table>
+    

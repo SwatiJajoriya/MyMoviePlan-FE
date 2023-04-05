@@ -1,0 +1,33 @@
+<div class = "container-fluid">
+    <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class = "container-fluid col-md-6 offset-md-3">
+    <h2 style="background-color:burlywood; text-align: center; text-size-adjust: 500;"><i>Add Movie</i></h2>
+    <form>
+        <table class="table table-hover" style="text-align: center;">
+        <tr style="text-shadow: 0cqh; text-size-adjust:50px;">
+            <td>Movie name</td><td><input type="text" name="name" [(ngModel)]="movie.movieName"></td></tr>
+        <tr><td>Show Dates</td><td><input type="text" name="showDate" [(ngModel)]="movie.showDate"></td></tr>
+        <tr><td>Show Timings</td><td><input type="text" name="showTime" [(ngModel)]="movie.showTime"></td></tr>
+        <tr><td>Location</td><td><input type="text"  name="showingLocation" [(ngModel)]="movie.showingLocation"></td></tr>
+        <tr><td> Genre :</td><td>
+            <select class="btn btn-light" [(ngModel)]="movie.genre"  name="genre">
+               <option  class="dropdown-item" *ngFor="let g of genrez" value="{{g.genre}}">{{g.genre}}</option>
+            </select>
+        </td></tr>
+        <tr><td> Language :</td><td>
+            <select class="btn btn-light" [(ngModel)]="movie.language"  name="language">
+               <option  class="dropdown-item" *ngFor="let lang of languages" value="{{lang.language}}">{{lang.language}}</option>
+            </select>
+        </td></tr>
+        <tr><td>Image-Path</td><td><input type="text" name="imagePath" [(ngModel)]="movie.imagePath"></td></tr>
+        <tr><td>Ticket-price</td><td><input type="text" name="price" [(ngModel)]="movie.price"></td></tr>
+        
+       <tr><td>
+     <button type="submit" (click)="addMovie()" class="btn btn-primary btn-lg">Add Movie</button>
+       </td></tr>
+    </table>
+        </form>
+    
+</div>

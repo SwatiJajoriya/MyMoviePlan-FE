@@ -1,0 +1,22 @@
+<app-admin-navbar></app-admin-navbar>
+<h1 style="text-align: center; color: brown;">Welcome Admin</h1>
+
+<table class="table">
+
+<tr><th>Id</th><th>Image</th><th>Movie</th><th>Date</th><th>Time</th><th>Location</th><th>Genre</th><th>Language</th><th>Price</th><th>Edit Details</th><th>Action</th></tr>
+<tr *ngFor="let movie of movies">
+<td>{{movie.id}}</td>
+<td><img src="{{movie.imagePath}}" style="height:150%; width: 150%;"></td>
+<td>{{movie.movieName}}</td>
+<td>{{movie.showDate}}</td>
+<td>{{movie.showTime}}</td>
+<td>{{movie.showingLocation}}</td>
+<td>{{movie.genre}}</td>
+<td>{{movie.language}}</td>
+<td>{{movie.price}}</td>
+<td><a routerLink="/editMovie/{{movie.id}}">
+    <button class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true">Edit</i></button></a></td>
+<td><button class="btn btn-danger" (click)="deleteMovie(movie.id)"><i class="fa fa-trash" aria-hidden="true">Delete</i></button></td>
+</tr>
+</table>
+
