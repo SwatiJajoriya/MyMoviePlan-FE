@@ -68,7 +68,7 @@ export class ServiceService {
       return this.http.delete<MovieClass>(this.MovieUrl+"delete/"+id);
     }
 
-  public updateMovie(id:number,movie:MovieClass)
+  public updateMovie(id:any,movie:any)
     {
       return this.http.put("http://localhost:8088/api/v1/movie/movieUpdate/"+id,movie);
     }
