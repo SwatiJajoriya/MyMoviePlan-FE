@@ -52,8 +52,8 @@ export class ServiceService {
       return this.http.get(this.MovieUrl+"getallmovie");
       }
   
-    public goToMovieSearch(moviename:any):Observable<MovieClass>{
-        return this.http.get<MovieClass>(this.MovieUrl+"getByMovieName/"+moviename);
+    public goToMovieSearch(keyword:any){
+        return this.http.get(this.MovieUrl+"getByMovieName/"+keyword);
        }
 
        public goToMovieSearchByGenre(keyword:any){
