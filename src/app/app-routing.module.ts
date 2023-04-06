@@ -29,6 +29,7 @@ const routes: Routes = [
 {path:'payment',component:PaymentComponent},
 {path:'ticket',component:BookTicketComponent},
 {path:'contactus',component:ContactUsComponent},
+{path:'aboutus',component:AboutUsComponent},
 ];
 
 @NgModule({
