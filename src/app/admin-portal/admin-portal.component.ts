@@ -32,8 +32,9 @@ export class AdminPortalComponent implements OnInit  {
     }
     let response=this.service.adminLogin(this.username);
     response.subscribe((data:any)=>this.admin=data);
-   
-    if(this.username===this.password){
+    console.info(this.admin.password)
+    
+    if(this.admin.password==this.password){
 
       this.router.navigate(['\admin-dashboard']);
 
